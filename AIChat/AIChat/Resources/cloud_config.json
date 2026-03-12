@@ -1,0 +1,15 @@
+{
+    "_comment": "Cloud Service Configuration / 云端服务配置",
+    "_usage": "Fill in the URLs below to enable cloud mode (login, payment, skill market, etc). Leave empty for local-only mode (API Key required).",
+    "_usage_zh": "填入下方地址启用云端模式（登录、支付、技能市场等）。留空则为本地模式（需自备 API Key）。",
+
+    "service_base_url": "",
+    "auth_base_url": "",
+    "payment_base_url": "",
+
+    "_notes": {
+        "service_base_url": "Main cloud service URL for chat relay, Composio proxy, skill market, balance, etc.",
+        "auth_base_url": "Authentication service URL (e.g. Supabase instance).",
+        "payment_base_url": "Payment/subscription backend URL. Defaults to service_base_url if empty."
+    }
+}

@@ -1,0 +1,29 @@
+name: Build
+
+on:
+  pull_request:
+    branches: [open-source]
+  push:
+    branches: [open-source]
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_16.4.app/Contents/Developer
+
+      - name: Build macOS App
+        run: |
+          xcodebuild \
+            -project AIChat/AIChat.xcodeproj \
+            -scheme AIChat \
+            -destination "platform=macOS" \
+            -configuration Release \
+            -derivedDataPath build/DerivedData \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            build

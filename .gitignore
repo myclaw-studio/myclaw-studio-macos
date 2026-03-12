@@ -1,0 +1,34 @@
+# 编译产物
+build/
+backend/dist/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/**/*.pyc
+*.dmg
+
+# Xcode
+AIChat/AIChat.xcodeproj/project.xcworkspace/xcuserdata/
+AIChat/AIChat.xcodeproj/xcuserdata/
+AIChat/xcuserdata/
+*.xcuserstate
+*.xcbkptlist
+DerivedData/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Claude Code local settings
+.claude/
+
+# Python
+*.egg-info/
+.venv/
+venv/
+
+# 运行时数据（用户本地）
+~/.aichat/
+apple_dev.md
+
+# 内部文档（不公开）
+docs/open-source-plan.md
