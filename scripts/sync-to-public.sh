@@ -31,6 +31,7 @@ EXCLUDE_FILES=(
     ".github/workflows/build-dmg-main.yml"
     ".github/workflows/build-dmg-open-source.yml"
     ".github/copilot-instructions.md"
+    ".github/workflows/build.yml"
 )
 
 echo ">>> 排除内部文件..."
@@ -40,6 +41,9 @@ for f in "${EXCLUDE_FILES[@]}"; do
     # 如果是新增文件，从暂存区移除
     git rm --cached -r "$f" 2>/dev/null || true
 done
+
+# 确保 clean-release 自己的 build.yml（触发 main 分支）不被覆盖
+git checkout -- .github/workflows/build.yml 2>/dev/null || true
 
 echo ""
 echo "========================================="
