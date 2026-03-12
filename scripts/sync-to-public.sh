@@ -17,7 +17,7 @@ if [ "$BRANCH" != "clean-release" ]; then
 fi
 
 echo ">>> 从 open-source 分支 squash 合并..."
-git merge --squash open-source
+git merge --squash --allow-unrelated-histories open-source
 
 # 排除内部文件（不应出现在公开仓库）
 EXCLUDE_FILES=(
